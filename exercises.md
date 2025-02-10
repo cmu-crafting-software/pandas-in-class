@@ -1,7 +1,3 @@
-
-
-
-
 1. Write an expression to find the Per Capita GDP of Serbia in 2007.
 
 2. Explain what each line in the following short program does: 
@@ -20,8 +16,8 @@ b) Based on this, what rule governs what is included (or not) in numerical slice
     numerical slice (column with an index) | named slice (column with a name)
     * Numerical slices are non inclusive of the last number.
     * Named slices are inclusive of everything.
+    * the numerical slices does not include the second number in slicing, but the named slices include the second namae in slicing
 ```python
-the numerical slices does not include the second number in slicing, but the named slices include the second namae in slicing
 
 europe_gdp_data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 print(europe_gdp_data.iloc[0:2, 0:2])
