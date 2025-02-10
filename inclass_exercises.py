@@ -49,3 +49,13 @@ Conversely, using named slices includes the starting and the ending indices, unl
 
 print(europe_gdp_data.iloc[0:2, 0:2])
 print(europe_gdp_data.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
+
+# 4. Stretch Goal: 
+# Write an expression to select each of the following:
+# GDP per capita for all countries in 1982.
+#     * GDP per capita for Denmark for all years.
+#     * GDP per capita for all countries for years after 1985.
+#     * GDP per capita for each country in 2007 as a multiple of GDP per capita for that country in 1952.
+
+denmark_gdp = europe_gdp_data.loc['Denmark']
+print(denmark_gdp)
