@@ -52,10 +52,23 @@ print(europe_gdp_data.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'
 
 # 4. Stretch Goal: 
 # Write an expression to select each of the following:
-# GDP per capita for all countries in 1982.
+#     * GDP per capita for all countries in 1982.
 #     * GDP per capita for Denmark for all years.
 #     * GDP per capita for all countries for years after 1985.
 #     * GDP per capita for each country in 2007 as a multiple of GDP per capita for that country in 1952.
 
+all_gdp_data = pd.read_csv('data/gapminder_all.csv', index_col='country')
+print('GDP FOR ALL COUNTRIES IN 1982')
+print(all_gdp_data.loc[:,'gdpPercap_1982'])
+
+
 denmark_gdp = europe_gdp_data.loc['Denmark']
+print('DENMARK GDP OVER TIME')
 print(denmark_gdp)
+
+print('GDP FOR ALL COUNTRIES AFTER 1985')
+gdp_after_1985 = all_gdp_data.filter(regex='gdpPercap_(198[6-9]|199.|200.)')
+print(gdp_after_1985)
+
+print('GDP IN 2007 AS A MULTIPLE OF 1952')
+print(all_gdp_data.loc[:,'gdpPercap_2007'] / all_gdp_data.loc[:,'gdpPercap_1952'])
